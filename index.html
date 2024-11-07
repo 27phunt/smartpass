@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-   <title>CB Form</title>
+   <title>FRCS SmartPass</title>
    <style>
      body {
        font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -90,8 +90,7 @@ transform: scale(2);
  </head>
  <body>
 
-   <h3>Enter your room number to</h3>
-  <h3>get the kiosk credentials</h3>
+   <h1>Enter your room number:</h1>
 <hr>
    <input type="text" id="room" placeholder="Room Number">
 <hr><hr>
@@ -100,7 +99,7 @@ transform: scale(2);
  </body>
   <script>
 function submit() {
-var script = "https://script.google.com/macros/s/AKfycbwYBZqLGV4ry0S_9JR2xy5wSfXB6NsOPymveLKLwxi1DM5NXh5Z3rhek1BtvUSMCnUQAg/exec"
+var script = "https://script.google.com/macros/s/AKfycbzu5PMavfNRbpreS8E1yAXUruYsAfKVqN6lq17-XlzkqKd3fti_5etBQcIbatP78X3FJw/exec"
 var room = document.getElementById('room').value
 window.top.location.href = script+"?"+room
 }

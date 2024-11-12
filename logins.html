@@ -46,6 +46,8 @@
 <hr><hr>
 
 <button onclick="submit()">Open</button>
+  <hr><hr>
+  <button onclick="open('/smartpass')">Back</button>
  </body>
 
  
@@ -54,6 +56,10 @@ function submit() {
 var script = "https://script.google.com/macros/s/AKfycbyHqprgBwNpxl5RUSN2M9eMVMgGz4E9NU6MhcqTqrXV4pMnxjqXxYcuWhjpaGUnb6QczQ/exec"
 var room = document.getElementById('room').value
 window.top.location.href = script+"?"+room
+}
+
+function open(page) {
+window.top.location.href = page
 }
    
    </script>

@@ -98,8 +98,8 @@ var room = document.getElementById('room').value
 for (x=0; x<input.length; x++) {
  var data = input[x].split("::::")
  if (data[0] == room) {
-    document.getElementById('title').setAttribute('class','')
-
+ 
+    // Remove 'Hide' Element
     var unhide = ['username1','username2','password1','password2']
     for (x=0; x<unhide.length; x++) {document.getElementById(unhide[x]).setAttribute('class','')}
 

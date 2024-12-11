@@ -9,7 +9,7 @@
        padding: 0.5em 1em;
        cursor: pointer;
        background-color: lightblue;
-       color: white;
+       color: black;
        border: none;
        border-radius: 5px;
     }
@@ -41,41 +41,41 @@
    </style>
  </head>
  <body>
-<embed type="text/html" id="content">
-   <h1 id="t1">Enter your room number:</h1>
+
     <h2 id="username"></h2>
     <h2 id="password"></h2>
 <hr>
-  <form>
-  <select id="room" width="20em">
-<option value="103">103</option>
-<option value="104">104</option>
-<option value="105">105</option>
-<option value="106">106</option>
-<option value="107">107</option>
-<option value="108">108</option>
-<option value="110">110</option>
-<option value="112">112</option>
-<option value="201">201</option>
-<option value="202">202</option>
-<option value="203">203</option>
-<option value="204">204</option>
-<option value="208">208</option>
-<option value="213">213</option>
-<option value="214">214</option>
-<option value="215">215</option>
-<option value="216">216</option>
-<option value="217">217</option>
-<option value="218">218</option>
-<option value="219">219</option>
-<option value="220">220</option>
-<option value="221">221</option>
-<option value="223">223</option>
-<option value="224">224</option>
-<option value="227">227</option>
-<option value="228">228</option>
-<option value="229">229</option>
-<option value="230">230</option>
+<h1>Smartpass iPad Logins</h1>
+<form><select id="room" width="20em">
+<option value="invalid" selected="selected">Select Room Number</option>
+<option value="103">Room 103</option>
+<option value="104">Room 104</option>
+<option value="105">Room 105</option>
+<option value="106">Room 106</option>
+<option value="107">Room 107</option>
+<option value="108">Room 108</option>
+<option value="110">Room 110</option>
+<option value="112">Room 112</option>
+<option value="201">Room 201</option>
+<option value="202">Room 202</option>
+<option value="203">Room 203</option>
+<option value="204">Room 204</option>
+<option value="208">Room 208</option>
+<option value="213">Room 213</option>
+<option value="214">Room 214</option>
+<option value="215">Room 215</option>
+<option value="216">Room 216</option>
+<option value="217">Room 217</option>
+<option value="218">Room 218</option>
+<option value="219">Room 219</option>
+<option value="220">Room 220</option>
+<option value="221">Room 221</option>
+<option value="223">Room 223</option>
+<option value="224">Room 224</option>
+<option value="227">Room 227</option>
+<option value="228">Room 228</option>
+<option value="229">Room 229</option>
+<option value="230">Room 230</option>
  </select>
  </form>
 <hr><hr>
@@ -88,7 +88,7 @@ var room = document.getElementById('room').value
 for (x=0; x<input.length; x++) {
  var data = input[x].split("::::")
  if (data[0] == room) {
-
+    document.getElementById('title').textContent = "Login for Room "+data[0]
     document.getElementById('username').textContent = "Username: "+data[1] 
     document.getElementById('password').textContent = "Password: "+data[2]
     

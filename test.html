@@ -50,12 +50,12 @@
 
 <hr>
 <h1>Smartpass iPad Logins</h1>
-<h2 class="hide" id="title"></h2>
-<h2 class="hide" id="username1"></h2>
+<h1 class="hide" id="username1"></h1>
 <h2 class="hide"id="username2"></h2>
-<h2 class="hide" id="password1"></h2>
+<hr>
+<h1 class="hide" id="password1"></h1>
 <h2 class="hide"id="password2"></h2>
-<hr><hr>
+<hr>
 <form><select id="room" width="20em">
 <option value="invalid" selected="selected">Select Room Number</option>
 <option value="103">Room 103</option>
@@ -104,7 +104,6 @@ for (x=0; x<input.length; x++) {
     for (x=0; x<unhide.length; x++) {document.getElementById(unhide[x]).setAttribute('class','')}
 
     // Set Data in Text Boxes
-    document.getElementById('title').textContent = "Login for Room "+data[0]+":"
     document.getElementById('username1').textContent = "Username:" 
     document.getElementById('password1').textContent = "Password:"
     document.getElementById('username2').textContent = data[1] 

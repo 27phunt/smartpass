@@ -41,8 +41,8 @@
    </style>
  </head>
  <body>
-
-   <h1>Enter your room number:</h1>
+<embed type="text/html" width="500" height="500" id="content">
+   <h1 id="t1">Enter your room number:</h1>
 <hr>
   <form>
   <select id="room" width="20em">
@@ -81,7 +81,9 @@
 <button onclick="submit()">View Login</button>
  </body><script>
 const script = "https://script.google.com/macros/s/AKfycbyHqprgBwNpxl5RUSN2M9eMVMgGz4E9NU6MhcqTqrXV4pMnxjqXxYcuWhjpaGUnb6QczQ/exec"
-function submit() {window.top.location.href = script+"?"+document.getElementById("room").value}
+function submit() {
+document.getElementById('content').setAttribute('src', script+"?"+document.getElementById("room").value)
+}
    </script>
  </body>
 </html>

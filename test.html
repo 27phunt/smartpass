@@ -85,9 +85,10 @@ function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_
 const script = "https://script.google.com/macros/s/AKfycbxubXlJR7UF3RdXtlLu-aYEmVvSsATa_xVOkVggVwRUJWgm8oT2Se-DKsTKDTWFmY0geg/exec"
 
 function run(input) {
-var values = []
-for (x=0; x<input.length; x++) {alert(input[x].split("::::")}
-alert(values)
+var values=[]; for (x=0; x<input.length; x++) {
+ var data = input[x].split("::::")
+ alert(data)
+}
 document.getElementById('content').setAttribute('src', script+"?"+document.getElementById("room").value)
 document.getElementById('content').setAttribute('width','100%')
 document.getElementById('content').setAttribute('height','100%')

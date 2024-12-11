@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
+ <head>
+   <title>FRCS SmartPass</title>
+   <style>
+    select {
+       font-family: 'Lexend';font-size: 22px;
+       text-align: center;
+       font-size: 1.2em;
+       padding: 0.5em 1em;
+       cursor: pointer;
+       background-color: lightblue;
+       color: black;
+       border: none;
+       border-radius: 5px;
+    }
+     body {
+       font-family: 'Lexend';font-size: 22px;
+       text-align: center;
+       margin: 0;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       background-color: #f7f7f7;
+     }
+
+     button {
+       font-size: 1.2em;
+       padding: 0.5em 1em;
+       cursor: pointer;
+       background-color: #5cb85c;
+       color: white;
+       border: none;
+       border-radius: 5px;
+     }
+
+
+     button:hover {
+       background-color: #4cae4c;
+     }
+     h2.hide {
+        font-size: 0;
+        padding: 0  0;
+     }
+   </style>
+ </head>
+ <body>
+
+<hr>
+<h1>Smartpass iPad Logins</h1>
+<h2 class="hide" id="username1"></h2>
+<h1 class="hide"id="username2"></h1>
+<hr>
+<h2 class="hide" id="password1"></h2>
+<h1 class="hide"id="password2"></h1>
+<hr>
+<form><select id="room" width="20em">
+<option value="invalid" selected="selected">Select Room Number</option>
+<option value="103">Room 103</option>
+<option value="104">Room 104</option>
+<option value="105">Room 105</option>
+<option value="106">Room 106</option>
+<option value="107">Room 107</option>
+<option value="108">Room 108</option>
+<option value="110">Room 110</option>
+<option value="112">Room 112</option>
+<option value="201">Room 201</option>
+<option value="202">Room 202</option>
+<option value="203">Room 203</option>
+<option value="204">Room 204</option>
+<option value="208">Room 208</option>
+<option value="213">Room 213</option>
+<option value="214">Room 214</option>
+<option value="215">Room 215</option>
+<option value="216">Room 216</option>
+<option value="217">Room 217</option>
+<option value="218">Room 218</option>
+<option value="219">Room 219</option>
+<option value="220">Room 220</option>
+<option value="221">Room 221</option>
+<option value="223">Room 223</option>
+<option value="224">Room 224</option>
+<option value="227">Room 227</option>
+<option value="228">Room 228</option>
+<option value="229">Room 229</option>
+<option value="230">Room 230</option>
+ </select>
+ </form>
+<hr><hr>
+
+<button onclick="submit()">Get Login</button>
+ </body><script>
+function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?gid=1146524827&single=true&output=csv").then(r => r.text() ).then(t => run(t.split("\n")))}
+function run(input) {
+var room = document.getElementById('room').value
+for (x=0; x<input.length; x++) {
+ var data = input[x].split("::::")
+ if (data[0] == room) {
+ 
+    // Remove 'Hide' Element
+    var unhide = ['username1','username2','password1','password2']
+    for (x=0; x<unhide.length; x++) {document.getElementById(unhide[x]).setAttribute('class','')}
+
+    // Set Data in Text Boxes
+    document.getElementById('username1').textContent = "Username:" 
+    document.getElementById('password1').textContent = "Password:"
+    document.getElementById('username2').textContent = data[1] 
+    document.getElementById('password2').textContent = data[2]
+  }}
+}
+   </script></html>

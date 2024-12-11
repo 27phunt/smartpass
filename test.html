@@ -89,8 +89,9 @@ for (x=0; x<input.length; x++) {
  var data = input[x].split("::::")
  if (data[0] == room) {
 
-document.getElementById('username').setTextContent("Username:"+data[1])
-document.getElementById('password').setTextContent("Password:"+data[2])
+    document.getElementById('username').textContent = "Username:"+data[1] 
+//document.getElementById('username').setTextContent("Username:"+data[1])
+//document.getElementById('password').setTextContent("Password:"+data[2])
     
   }}
 }

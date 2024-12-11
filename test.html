@@ -14,7 +14,7 @@
        background-color: #f7f7f7;
      }
 
-     input[type="text"] {
+     input[type="list"] {
        font-size: 1.2em;
        padding: 0.5em;
        margin-bottom: 1em;
@@ -41,7 +41,7 @@
 
    <h1>Enter your room number:</h1>
 <hr>
-<input list="rooms" name="Room" /></label>
+<input list="rooms" name="Room" id="rooms"/></label>
 <datalist id="rooms">
 <option value="103">
 <option value="104">
@@ -77,7 +77,10 @@
 <button onclick="submit()">Open</button>
  </body><script>
 const script = "https://script.google.com/macros/s/AKfycbyHqprgBwNpxl5RUSN2M9eMVMgGz4E9NU6MhcqTqrXV4pMnxjqXxYcuWhjpaGUnb6QczQ/exec"
-function submit() {window.top.location.href = script+"?"+document.getElementById('room').value}
+function submit() {
+var e = document.getElementById("room");
+window.top.location.href = script+"?"+e.options[e.selectedIndex].text
+}
    </script>
  </body>
 </html>

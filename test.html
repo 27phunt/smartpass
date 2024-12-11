@@ -41,7 +41,7 @@
    </style>
  </head>
  <body>
-<embed type="text/html" width="500" height="500" id="content">
+<embed type="text/html" id="content">
    <h1 id="t1">Enter your room number:</h1>
 <hr>
   <form>
@@ -80,9 +80,12 @@
 
 <button onclick="submit()">View Login</button>
  </body><script>
-const script = "https://script.google.com/macros/s/AKfycbyHqprgBwNpxl5RUSN2M9eMVMgGz4E9NU6MhcqTqrXV4pMnxjqXxYcuWhjpaGUnb6QczQ/exec"
+const script = "https://script.google.com/macros/s/AKfycbxubXlJR7UF3RdXtlLu-aYEmVvSsATa_xVOkVggVwRUJWgm8oT2Se-DKsTKDTWFmY0geg/exec"
 function submit() {
 document.getElementById('content').setAttribute('src', script+"?"+document.getElementById("room").value)
+document.getElementById('content').setAttribute('width','500')
+document.getElementById('content').setAttribute('height','500')
+document.getElementById('t1').textcontent = ""
 }
    </script>
  </body>

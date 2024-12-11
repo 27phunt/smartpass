@@ -31,13 +31,13 @@
    </style>
  </head>
  <body>
-<hr><hr>
-
+<embed type="text/html" width="300" height="200">
 <button onclick="submit()">View Login</button>
  </body><script>
 const script = "https://script.google.com/macros/s/AKfycbyHqprgBwNpxl5RUSN2M9eMVMgGz4E9NU6MhcqTqrXV4pMnxjqXxYcuWhjpaGUnb6QczQ/exec"
+  
 function submit() {
- alert(getParam())
+document.getElementById('content').setAttribute('src', script+"?"+getParam())
 }
  function getParam() {return window.location.href.split("?")[1]}
 </script>

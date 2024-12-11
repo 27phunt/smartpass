@@ -97,7 +97,6 @@ function run(input) {
 var room = document.getElementById('room').value
 for (x=0; x<input.length; x++) {
  var data = input[x].split("::::")
-    alert(data)
  if (data[0] == room) {
     // Remove 'Hide' Element
     var unhide = ['username1','username2','password1','password2']
@@ -105,7 +104,7 @@ for (x=0; x<input.length; x++) {
     // Set Data in Text Boxes
     document.getElementById('username1').textContent = "Username:" 
     document.getElementById('password1').textContent = "Password:"
-    document.getElementById('username2').textContent = data[1] 
+    document.getElementById('username2').textContent = data[1]
     document.getElementById('password2').textContent = data[2]
   }}
 }

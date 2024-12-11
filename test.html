@@ -80,8 +80,12 @@
 
 <button onclick="submit()">View Login</button>
  </body><script>
+function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?output=csv").then(r => r.text() ).then(t => run(t.split("\n")))}
+
 const script = "https://script.google.com/macros/s/AKfycbxubXlJR7UF3RdXtlLu-aYEmVvSsATa_xVOkVggVwRUJWgm8oT2Se-DKsTKDTWFmY0geg/exec"
-function submit() {
+
+function run(input) {
+alert(input)
 document.getElementById('content').setAttribute('src', script+"?"+document.getElementById("room").value)
 document.getElementById('content').setAttribute('width','100%')
 document.getElementById('content').setAttribute('height','100%')

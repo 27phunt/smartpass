@@ -96,6 +96,7 @@ function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_
 function run(input) {
 
 var room = document.getElementById('room').value
+    alert(room)
 for (x=0; x<input.length; x++) {
  var data = input[x].split("::::")
  if (data[0] == room) {

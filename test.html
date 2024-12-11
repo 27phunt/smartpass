@@ -87,7 +87,7 @@ const script = "https://script.google.com/macros/s/AKfycbxubXlJR7UF3RdXtlLu-aYEm
 function run(input) {
 var values = []
 for (x=0; x<input.length; x++) {values.push(input[x].split("::::")}
-alert(values[0])
+alert(values)
 document.getElementById('content').setAttribute('src', script+"?"+document.getElementById("room").value)
 document.getElementById('content').setAttribute('width','100%')
 document.getElementById('content').setAttribute('height','100%')

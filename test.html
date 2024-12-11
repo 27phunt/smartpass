@@ -41,10 +41,9 @@
 
    <h1>Enter your room number:</h1>
 <hr>
-<label>Choose a browser from this list:
-<input list="browsers" name="myBrowser" /></label>
-<datalist id="browsers">
- <option value="103">
+<input list="rooms" name="Room" /></label>
+<datalist id="rooms">
+<option value="103">
 <option value="104">
 <option value="105">
 <option value="106">
@@ -76,13 +75,9 @@
 <hr><hr>
 
 <button onclick="submit()">Open</button>
- </body>
-
- 
-  <script>
+ </body><script>
 const script = "https://script.google.com/macros/s/AKfycbyHqprgBwNpxl5RUSN2M9eMVMgGz4E9NU6MhcqTqrXV4pMnxjqXxYcuWhjpaGUnb6QczQ/exec"
 function submit() {window.top.location.href = script+"?"+document.getElementById('room').value}
-   
    </script>
  </body>
 </html>

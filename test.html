@@ -93,11 +93,8 @@ var values=[]; for (x=0; x<input.length; x++) {
  if (data[0] == room) {run2(data); return}}
 }
   function run2(data) {
-document.getElementById('content').setAttribute('src', script+"?"+document.getElementById("room").value)
-document.getElementById('content').setAttribute('width','100%')
-document.getElementById('content').setAttribute('height','100%')
- 
-document.getElementById('username').textcontent = "Username:"+
+document.getElementById('username').textcontent = "Username:"+data[1]
+   document.getElementById('password').textcontent = "Password:"+data[2]
 }
    </script>
  </body>

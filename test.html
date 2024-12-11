@@ -43,8 +43,8 @@
  <body>
 <embed type="text/html" id="content">
    <h1 id="t1">Enter your room number:</h1>
-     <h2 id="username"></h2>
-  <h2 id="password"></h2>
+    <h2 id="username"></h2>
+    <h2 id="password"></h2>
 <hr>
   <form>
   <select id="room" width="20em">
@@ -83,19 +83,20 @@
 <button onclick="submit()">View Login</button>
  </body><script>
 function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?gid=1146524827&single=true&output=csv").then(r => r.text() ).then(t => run(t.split("\n")))}
-
-const script = "https://script.google.com/macros/s/AKfycbxubXlJR7UF3RdXtlLu-aYEmVvSsATa_xVOkVggVwRUJWgm8oT2Se-DKsTKDTWFmY0geg/exec"
-
 function run(input) {
- var room = document.getElementById('room').value
+var room = document.getElementById('room').value
 var values=[]; for (x=0; x<input.length; x++) {
  var data = input[x].split("::::")
- if (data[0] == room) {run2(data); return}}
+ if (data[0] == room) {
+alert("hi")
+  
+  
+  
+  }}
 }
-  function run2(data) {
-document.getElementById('username').setTextContent("Username:"+data[1])
-document.getElementById('password').setTextContent("Password:"+data[2])
-}
+
+//document.getElementById('username').setTextContent("Username:"+data[1])
+//document.getElementById('password').setTextContent("Password:"+data[2])
    </script>
  </body>
 </html>

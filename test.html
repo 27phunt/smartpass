@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
  <head>
    <title>FRCS SmartPass</title>
    <style>
     select {
-       font-family: 'Comic Sans MS', cursive, sans-serif;
+       font-family: 'Lexend';font-size: 22px;
        text-align: center;
        font-size: 1.2em;
        padding: 0.5em 1em;
@@ -15,7 +16,7 @@
        border-radius: 5px;
     }
      body {
-       font-family: 'Comic Sans MS', cursive, sans-serif;
+       font-family: 'Lexend';font-size: 22px;
        text-align: center;
        margin: 0;
        display: flex;
@@ -89,7 +90,7 @@
  </form>
 <hr><hr>
 
-<button onclick="submit()">View Login</button>
+<button onclick="submit()">Get Login</button>
  </body><script>
 function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?gid=1146524827&single=true&output=csv").then(r => r.text() ).then(t => run(t.split("\n")))}
 function run(input) {
@@ -98,21 +99,16 @@ for (x=0; x<input.length; x++) {
  var data = input[x].split("::::")
  if (data[0] == room) {
     document.getElementById('title').setAttribute('class','')
-    document.getElementById('username').setAttribute('class','') 
-    document.getElementById('password').setAttribute('class','')
 
+    var unhide = ['username1','username2','password1','password2']
+    for (x=0; x<unhide.length; x++) {document.getElementById(unhide[x]).setAttribute('class','')}
 
-
+    // Set Data in Text Boxes
     document.getElementById('title').textContent = "Login for Room "+data[0]+":"
-    
     document.getElementById('username1').textContent = "Username:" 
     document.getElementById('password1').textContent = "Password:"
-
-    
     document.getElementById('username2').textContent = data[1] 
     document.getElementById('password2').textContent = data[2]
   }}
 }
-   </script>
- </body>
-</html>
+   </script></html>

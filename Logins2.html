@@ -72,7 +72,9 @@ function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_
 function run(input) {
 var values = [];  for (x=0; x<input.length; x++) {values.push(input[x].split("::::"))}
 
-for (x=0; x<values.length; x++) {document.getElementById('room').appendChild('<option value="'+values[x][0]+'">Room '+values[x][0]+'</option>')}
+for (x=0; x<values.length; x++) {
+var doc = document.createElement("option").setAttribute('value',values[x][0]).setAttribute.text = "Room "+values[x][0]
+}document.getElementById('room').appendChild(doc)
 return
 for (x=0; x<input.length; x++) {    var data = input[x].split("::::");    if (data[0].includes(document.getElementById('room').value)) {
     // Remove 'Hide' Element

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>FRCS Smartpass</title>
+   <style>
+
+     body {
+      flex-direction: column;
+      display: flex;
+      font-family: 'Courier New', Courier, monospace;
+       text-align: center;
+       margin: 0;
+       justify-content: center;
+       align-items: center;
+       background-color: #f7f7f7;
+       line-height: 0.2;
+     }
+
+     button {
+      font-family: 'Courier New', Courier, monospace;
+       font-size: 2em;
+       padding: .75em 1em;
+       cursor: pointer;
+       background-color: #5cb85c;
+       color: white;
+       border: none;
+       border-radius: 5px;
+       width: 20em;
+     }
+     hr {
+      color: transparent;
+     }
+     button:hover {
+       background-color: #4cae4c;
+     }
+     h1 {
+      font-size: 4em
+     }
+   </style>
+ </head>
+ <body onLoad="onLoad()">
+<h1>FRCS Smartpass</h1>
+  </p><hr>
+<button onclick="openPage('Logins.html')">iPad Logins</button>
+<hr>
+<button onclick="openPage('Restart.pdf')">Restart Instructions</button>
+<hr>
+</body>
+
+ 
+  <script>
+function onLoad() {
+  // Set Url and Title
+
+}
+function openPage(page) {
+window.top.location.href = "./"+page
+}
+   </script>
+ </body>
+</html>

@@ -16,7 +16,8 @@
        border-radius: 5px;
     }
      body {
-       font-family: 'Lexend';font-size: 22px;
+       font-family: 'Lexend';
+    font-size: 22px;
        text-align: center;
        margin: 0;
        display: flex;
@@ -27,16 +28,18 @@
      }
 
      button {
-       font-size: 1.2em;
-       padding: 0.5em 1em;
-       cursor: pointer;
-       background-color: #5cb85c;
-       color: white;
-       border: none;
-       border-radius: 5px;
+font-family: 'Lexend';
+font-size: 4em;
+line-height: 0;
+text-align: center;
+cursor: pointer;
+background-color: transparent;
+color: black;
+border: solid;
+border-radius: 5px;
+width:1.5em;
+height: 1.5em;
      }
-
-
      button:hover {
        background-color: #4cae4c;
      }
@@ -90,7 +93,7 @@
  </form>
 <hr><hr>
 
-<button onclick="submit()">Get Login</button>
+<button onclick="refresh()">&#x21bb;</button>
  </body><script>
 function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?gid=1146524827&single=true&output=csv").then(r => r.text() ).then(t => run(t.split("\n")))}
 function run(input) {

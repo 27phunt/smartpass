@@ -29,7 +29,7 @@
 
      button {
 font-family: 'Lexend';
-font-size: 4em;
+font-size: 2em;
 line-height: 0;
 text-align: center;
 cursor: pointer;
@@ -37,7 +37,7 @@ background-color: transparent;
 color: black;
 border: solid;
 border-radius: 5px;
-width:.75em;
+width:1.5em;
 height:.75em;
      }
      button:hover {
@@ -93,7 +93,7 @@ height:.75em;
  </form>
 <hr><hr>
 
-<button onclick="submit()">&#x21bb;</button>
+<button onclick="submit()">Load</button>
  </body><script>
 function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?gid=1146524827&single=true&output=csv").then(r => r.text() ).then(t => run(t.split("\n")))}
 function run(input) {

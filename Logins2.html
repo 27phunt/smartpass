@@ -50,7 +50,7 @@ color: #f7f7f7;
      }
    </style>
  </head>
- <body>
+ <body onload="onLoad()">
 
 <hr>
 <h1>iPad Logins</h1>
@@ -68,15 +68,19 @@ color: #f7f7f7;
 
 <button onclick="submit()">Load</button>
  </body><script>
-function submit() {fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?gid=1146524827&single=true&output=csv").then(r => r.text() ).then(t => run(t.split("\n")))}
-function run(input) {
-var values = [];  for (x=0; x<input.length; x++) {values.push(input[x].split("::::"))}
+const sheet = "https://docs.google.com/spreadsheets/d/e/2PACX-1vReXc_hUNQTyjzWW2aiSbRw0X6B7hlSC9bDP-FpJO0QtQVcsLQ5-QZuj_U9hrqQAyT3T0ysqbV45Iep/pub?gid=1146524827&single=true&output=csv"
+function submit() {fetch(sheet).then(r => r.text() ).then(t => submit1(t.split("\n")))}
+function onLoad() {fetch(sheet).then(r => r.text() ).then(t => onLoad1(t.split("\n")))}
 
-for (x=0; x<values.length; x++) {
-var doc = document.createElement("option").setAttribute('value',values[x][0]).setAttribute.text = "Room "+values[x][0]
-}document.getElementById('room').appendChild(doc)
-return
-for (x=0; x<input.length; x++) {    var data = input[x].split("::::");    if (data[0].includes(document.getElementById('room').value)) {
+function onLoad1(input) {for (x=0; x<input.length; x++) {
+var data = input[x].split("::::")
+var doc = document.createElement("option");doc.value = data[0];doc.text = "Room "+data[0]
+document.getElementById('room').appendChild(doc)
+}
+}
+
+function submit1(input) {
+for (x=0; x<input.length; x++) {var data = input[x].split("::::");    if (data[0].includes(document.getElementById('room').value)) {
     // Remove 'Hide' Element
     var unhide = ['username1','username2','password1','password2'];    for (x=0; x<unhide.length; x++) {document.getElementById(unhide[x]).setAttribute('class','')}
     // Set Data in Text Boxes

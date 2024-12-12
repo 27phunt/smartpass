@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
  <head>
    <title>FRCS Smartpass</title>
    <style>
@@ -7,7 +8,7 @@
      body {
       flex-direction: column;
       display: flex;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Lexend';font-size: 22px;
        text-align: center;
        margin: 0;
        justify-content: center;
@@ -17,7 +18,7 @@
      }
 
      button {
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Lexend';font-size: 22px;
        font-size: 2em;
        padding: .75em 1em;
        cursor: pointer;
@@ -38,24 +39,12 @@
      }
    </style>
  </head>
- <body onLoad="onLoad()">
+ <body>
+  <hr>
 <h1>FRCS Smartpass</h1>
   </p><hr>
 <button onclick="openPage('Logins.html')">iPad Logins</button>
 <hr>
 <button onclick="openPage('Restart.pdf')">Restart Instructions</button>
 <hr>
-</body>
-
- 
-  <script>
-function onLoad() {
-  // Set Url and Title
-
-}
-function openPage(page) {
-window.top.location.href = "./"+page
-}
-   </script>
- </body>
-</html>
+</body><script>function openPage(page) {window.top.location.href = "./"+page}</script></html>
